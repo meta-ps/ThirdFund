@@ -1,12 +1,17 @@
-# Sample Hardhat Project
+# ThirdFund
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
 
-Try running some of the following tasks:
+
+
 
 ```shell
-$ thirdfund-contract\node_modules\.bin\hardhat run scripts/deploy.ts --network mantle
-ThirdFund 0x9aBCeF736a99544d1E78946529F278e27ae97cFA
-Done in 4.59s.
+$ C:\hardhat run scripts/deploy.ts --network mantle
+ThirdFund 0xF0Ee6EdBda38ebeFb0835Dae5bf958206B763518
+Done in 9.17s.
+
+$ C:\hardhat run scripts/deploy.ts --network mumbai
+Compiled 1 Solidity file successfully
+ThirdFund 0x02b8b74725D0b73b5beD86Fa225130E296f3724E
+Done in 13.08s.
 
 ```

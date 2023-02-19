@@ -10,7 +10,7 @@ const config: HardhatUserConfig = {
       url: 'https://rpc.testnet.mantle.xyz'
     },
     mumbai: {
-      account: [process.env.PRIVATE_KEY],
+      accounts: [process.env.PRIVATE_KEY!],
       url: `https://withered-bold-crater.matic-testnet.discover.quiknode.pro/${process.env.QUICK_NODE}/`
 
     }

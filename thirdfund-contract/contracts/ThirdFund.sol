@@ -15,14 +15,35 @@ contract ThirdFund {
         uint256[] donations;
     }
 
+    event IProjectEvent(
+        address owner,
+        string title,
+        string description,
+        uint256 target,
+        uint256 deadline,
+        uint256 amountCollected
+    );
+    event IFunder(address owner, uint256 projectId, uint256 amount);
+
     mapping(uint256 => Project) public projects;
 
     uint256 public numberOfProjects = 0;
 
-    function createProject(address _owner, string memory _title, string memory _description, uint256 _target, uint256 _deadline, string memory _image, string memory _video) public returns (uint256) {
+    function createProject(
+        address _owner,
+        string memory _title,
+        string memory _description,
+        uint256 _target,
+        uint256 _deadline,
+        string memory _image,
+        string memory _video
+    ) public returns (uint256) {
         Project storage project = projects[numberOfProjects];
 
-        require(project.deadline < block.timestamp, "The deadline should be a date in the future.");
+        require(
+            project.deadline < block.timestamp,
+            "The deadline should be a date in the future."
+        );
 
         project.owner = _owner;
         project.title = _title;
@@ -35,7 +56,8 @@ contract ThirdFund {
 
         numberOfProjects++;
 
-        return numberOfProjects -1;
+        emit IProjectEvent(_owner, _title, _description, _target, _deadline, 0);
+        return numberOfProjects - 1;
     }
 
     function donateToProject(uint256 _id) public payable {
@@ -51,18 +73,21 @@ contract ThirdFund {
         if (sent) {
             project.amountCollected = project.amountCollected + amount;
         }
-
-
+        emit IFunder(msg.sender, _id, msg.value);
     }
 
-    function getDonators(uint256 _id) view public returns (address[] memory, uint256[] memory) {
-          return (projects[_id].donators, projects[_id].donations);
+    function getDonators(uint256 _id)
+        public
+        view
+        returns (address[] memory, uint256[] memory)
+    {
+        return (projects[_id].donators, projects[_id].donations);
     }
-    
+
     function getCampaigns() public view returns (Project[] memory) {
         Project[] memory allProjects = new Project[](numberOfProjects);
 
-        for(uint i = 0; i < numberOfProjects; i++) {
+        for (uint256 i = 0; i < numberOfProjects; i++) {
             Project storage item = projects[i];
 
             allProjects[i] = item;

@@ -1,6 +1,74 @@
-export const CONTRACT_ADDRESS = "0x9aBCeF736a99544d1E78946529F278e27ae97cFA"
+export const CONTRACT_ADDRESS = "0xF0Ee6EdBda38ebeFb0835Dae5bf958206B763518"
 
 export const CONTRACT_ABI = [
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "projectId",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "IFunder",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "title",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "description",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "target",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "deadline",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amountCollected",
+                "type": "uint256"
+            }
+        ],
+        "name": "IProjectEvent",
+        "type": "event"
+    },
     {
         "inputs": [
             {
@@ -220,5 +288,6 @@ export const CONTRACT_ABI = [
         "type": "function"
     }
 ]
+
 
 
