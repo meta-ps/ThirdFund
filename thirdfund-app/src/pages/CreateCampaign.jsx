@@ -7,7 +7,9 @@ import { CustomButton, FormField, Loader } from '../components';
 import { checkIfImage } from '../utils';
 import { CONTRACT_ABI, CONTRACT_ADDRESS } from '../constants/contract';
 
+
 const CreateCampaign = () => {
+
 
   const [provider, setProvider] = useState()
   const [address, setAddress] = useState()
@@ -141,6 +143,7 @@ const CreateCampaign = () => {
           value={form.image}
           handleChange={(e) => handleFormFieldChange('image', e)}
         />
+
 
         <div className="flex justify-center items-center mt-[40px]">
           <CustomButton
