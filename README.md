@@ -111,6 +111,38 @@ Used the below article to learn about Mantle testnet and configuring it to metam
 https://mirror.xyz/0xmantle.eth/CKxRFGZJ6XalmpwuHqwe-S8canXJahQek562QapmNIA
 
 
+## UI
+
+### Home 
+
+![home](thirdfund-app/src/assets/ThirdFund.png)
+
+### Create Project Campaign
+
+![dashboard](thirdfund-app/src/assets/createcampaign.png)
+
+### Project Dashboard
+
+![dashboard](thirdfund-app/src/assets/funding-page.png)
+
+## Usage of Technologies
+
+### Solidity and JavaScript
+
+- <b><p>Solidity code for Smart Contract:</p></b>
+https://github.com/meta-ps/ThirdFund/blob/main/thirdfund-contract/contracts/ThirdFund.sol
+
+- <b><p>Fetching details from contract using JS:<p></b>
+https://github.com/meta-ps/ThirdFund/blob/main/thirdfund-app/src/context/index.jsx
+
+### Mantle Testenet Deployment
+
+- <b><p>Deployed Smart Contract Link:</p></b>
+https://explorer.testnet.mantle.xyz/address/0x05cFE8299D2886f6e9e9Fd84399B3B3383B893B0
+
+- <b><p>Hardhat Configuration:</p></b>
+https://github.com/meta-ps/ThirdFund/blob/main/thirdfund-contract/hardhat.config.ts
+
 <!-- LICENSE -->
 
 ## License
